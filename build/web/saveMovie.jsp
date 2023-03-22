@@ -18,13 +18,17 @@
 
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/MultiMedia", "root", "Admin$1234");
-    Statement statement = connection.createStatement();
 
-    String sql = "INSERT INTO Movies (id, name, director, date, genre, country) ";
-    sql += "VALUES (" + id + ", '" + name + "', '" + director + "', '" + date + "', '" + genre + "', '" + country + "')";
+    PreparedStatement statement = connection.prepareStatement("INSERT INTO Movies (id, name, director, date, genre, country) VALUES (?, ?, ?, ?, ?, ?)");
+    statement.setInt(1, id);
+    statement.setString(2, name);
+    statement.setString(3, director);
+    statement.setString(4, date);
+    statement.setString(5, genre);
+    statement.setString(6, country);
 
-    int rowsAffected = statement.executeUpdate(sql);
-
+    int rowsAffected = statement.executeUpdate();
+    
     if (rowsAffected == 1) {
         RequestDispatcher rd = request.getRequestDispatcher("getMovies.jsp");
         rd.forward(request, response);
