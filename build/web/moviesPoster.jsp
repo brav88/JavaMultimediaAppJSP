@@ -24,8 +24,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>                       
+                    <div class="navbar-nav">                        
+                        <a class="nav-link" href="index.jsp">Home</a>                        
+                    </div>
+                    <div class="navbar-nav">                        
+                        <a class="nav-link" href="getMovies.jsp">Movies</a>                        
+                    </div>
+                    <div class="navbar-nav">                        
+                        <a class="nav-link" href="moviesPoster.jsp">Poster</a>                        
+                    </div>
+                    <div class="navbar-nav">                        
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Logout</a>                        
                     </div>
                 </div>
             </div>
